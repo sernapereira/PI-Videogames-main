@@ -15,6 +15,7 @@ const initialState = {
   genres: [],
 };
 
+const errors = [{name: "0000"}]
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_VIDEOGAMES:
@@ -46,11 +47,11 @@ const rootReducer = (state = initialState, action) => {
         action.payload === "Creados"
           ? allVideogames2.filter((el) => el.created)
           : allVideogames2.filter((el) => !el.created);
-
+console.log(createFIlter);
       return {
         ...state,
         videogames:
-          action.payload === "Todos" ? state.allVideogames : createFIlter,
+          action.payload === "Todos" ? state.allVideogames : createFIlter.length > 0 ? createFIlter : errors
       };
     case FILTER_BY_ALFABETICO:
       const filterAlfabetico =

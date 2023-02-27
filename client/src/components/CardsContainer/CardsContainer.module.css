@@ -1,12 +1,14 @@
 .contenedor {
   width: 1100%;
   max-width: 100%;
-  margin: 0 auto;
-  display: flex;
+
+  display:inline-flex;
   align-items: center;
   justify-content: space-between;
  flex-wrap: wrap;
 
   
 }
+
+
 

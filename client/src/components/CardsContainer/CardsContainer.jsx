@@ -13,7 +13,7 @@ const CardsContainer = ({ current }) => {
   return (
     <div className={style.contenedor}>
       {aux ? (
-        <NotName />
+        <NotName className={style.error} />
       ) : (
         current.map((elem) => {
           return (
@@ -28,7 +28,7 @@ const CardsContainer = ({ current }) => {
         })
       )}
 
-      <div></div>
+      
     </div>
   );
 };

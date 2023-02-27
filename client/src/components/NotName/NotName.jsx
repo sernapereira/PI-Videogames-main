@@ -1,9 +1,10 @@
 import React from "react";
+import style from './NotName.module.css'
 
 const NotName = () => {
   return (
-    <div>
-      <h1>NO HAY JUEGOS CON ESTE NOMBRE</h1>
+    <div className={style.NotName} >
+      <h1>ERROR DE BUSQUEDA</h1>
     </div>
   );
 };

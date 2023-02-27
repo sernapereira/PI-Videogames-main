@@ -30,7 +30,7 @@ const Home = () => {
     indixePrimerJuego,
     indixeUltimoJuego
   );
-
+ 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -66,25 +66,36 @@ const Home = () => {
         <ul>
           <li>
             {" "}
-            <button className={style.render} onClick={(e) => handlerVideogame(e)}>Render</button>
+            <button
+              className={style.render}
+              onClick={(e) => handlerVideogame(e)}
+            >
+              Render
+            </button>
           </li>
           <li>
             {" "}
             <Link to={"/videogame"}>
-              <button className={style.crear} >Crear Juego</button>{" "}
+              <button className={style.crear}>Crear Juego</button>{" "}
             </Link>
           </li>
-          
-          <li >
+
+          <li>
             {" "}
-            <select onChange={(e) => handleFilterAlfabetico(e)}  className={style.acendente}  >
+            <select
+              onChange={(e) => handleFilterAlfabetico(e)}
+              className={style.acendente}
+            >
               <option value="Asc">Acendente</option>
               <option value="Desc">Decendente</option>
             </select>
           </li>
           <li>
             {" "}
-            <select onChange={(e) => handleFilterGenres(e)}  className={style.categorias} >
+            <select
+              onChange={(e) => handleFilterGenres(e)}
+              className={style.categorias}
+            >
               <option value="Todos">Todas las Categoria</option>
               <option value="Action">Action</option>
               <option value="Indie">Indie</option>
@@ -109,12 +120,16 @@ const Home = () => {
             </select>
           </li>
           <li>
-            {" "}
-            <select onChange={(e) => handleFilterCreate(e)}  className={style.existente} >
-              <option value="Todos">Todos</option>
-              <option value="Creados">Creados</option>
-              <option value="Existente">Existente</option>
-            </select>
+            {
+              <select
+                onChange={(e) => handleFilterCreate(e)}
+                className={style.existente}
+              >
+                <option value="Todos">Todos</option>
+                <option value="Creados">Creados</option>
+                <option value="Existente">Existente</option>
+              </select>
+            }
           </li>
           <li className={style.buscar}>
             {" "}

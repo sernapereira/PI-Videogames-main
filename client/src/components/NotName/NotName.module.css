@@ -1,0 +1,8 @@
+.NotName {
+    padding: 20px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+    background-color: rgba(255, 0, 0, 0.431);
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
