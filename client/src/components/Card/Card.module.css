@@ -1,0 +1,35 @@
+.card {
+  
+  width:22%;
+  margin: 5px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.729);
+  box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.481);
+  cursor: default;
+  transition: all 400ms ease;
+  padding: 10px;
+  text-align: center;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.539);
+  
+}
+
+.card img {
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+
+}
+
+.card:hover {
+  box-shadow: 0 5px 20px 3px rgb(72, 45, 2);
+  transform: translateY(-5%);
+}
+
+.Link {
+ text-decoration: none;
+ color: rgba(209, 226, 18, 0.678);
+}
+
+

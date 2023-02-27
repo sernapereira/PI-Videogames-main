@@ -1,0 +1,34 @@
+.nav {
+    text-align: center;
+    
+}
+
+.nav ul {
+    text-align: center;
+   
+}
+
+nav ul li {
+    display: inline-block ;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+
+.nav ul li h4 {
+    cursor: default;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+  
+   
+    background-color: rgba(0, 0, 0, 0.393);
+    text-decoration: none;
+    
+}
+
+.nav ul li h4:hover{
+    background: rgb(0, 0, 0);
+    transform: translateY(-10%);
+}

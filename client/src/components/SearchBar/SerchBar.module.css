@@ -1,0 +1,27 @@
+.buscar {
+  width: 250px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(255, 249, 216);
+  border-top-right-radius: 20px;
+}
+
+.buscar:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(246, 255, 0);
+  transform: translateY(-10%);
+}
+
+.enviar {
+  width: 80px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(255, 219, 17);
+  border-bottom-left-radius: 20px;
+}
+
+.enviar:hover {
+  background-color: rgba(70, 70, 70, 0.363);
+  color: rgb(246, 255, 0);
+  transform: translateY(-10%);
+}
