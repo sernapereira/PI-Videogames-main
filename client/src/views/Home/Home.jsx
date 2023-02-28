@@ -30,7 +30,7 @@ const Home = () => {
     indixePrimerJuego,
     indixeUltimoJuego
   );
- 
+
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -62,8 +62,16 @@ const Home = () => {
   return (
     <div className={style.container}>
       <nav className={style.nav}>
-        <h1>Api VideoJuegos</h1>
         <ul>
+          <li>
+            <Link to={"/"}>
+              {" "}
+              <button className={style.atras}>Atras</button>
+            </Link>{" "}
+          </li>
+          <li>
+          <h1>Api VideoJuegos</h1>
+          </li>
           <li>
             {" "}
             <button
@@ -73,6 +81,7 @@ const Home = () => {
               Render
             </button>
           </li>
+
           <li>
             {" "}
             <Link to={"/videogame"}>
