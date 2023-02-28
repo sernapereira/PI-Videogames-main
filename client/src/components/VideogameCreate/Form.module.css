@@ -1,24 +1,107 @@
 .div {
   width: 18%;
-  margin: 50px;
+  margin: 40px;
   border-top-right-radius: 100px;
   border-bottom-left-radius: 100px;
-  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.729);
   box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.481);
   cursor: default;
   transition: all 400ms ease;
-  padding: 10px;
+  padding: 50px;
   text-align: center;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.539);
 
   align-items: center;
-  justify-content: space-between;
-  width: 90%;
+
+  width: 85%;
 }
+
+.boton {
+  width: 130px;
+  padding: 9px;
+  border: none;
+  background-color: rgb(255, 219, 17);
+  border-radius: 4px;
+}
+
+.boton:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(246, 255, 0);
+  transform: translateY(-10%);
+}
+
 
 .div textarea {
   font-family: inherit;
   resize: none;
+  background-color: rgb(255, 219, 17);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.lis {
+  margin: 30px;
+  display: inline-flex;
+  width: 45%;
+  list-style-type: none;
+}
+
+.liss {
+  margin: 30px;
+  display: inline-flex;
+  width: 45%;
+  list-style-type: none;
+}
+
+.lisss {
+  margin: 30px;
+  display: inline-flex;
+  width: 40%;
+  list-style-type: none;
+}
+
+.input {
+  margin: 30px;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(255, 219, 17);
+  border-radius: 4px;
+}
+
+.input:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(246, 255, 0);
+  transform: translateY(-10%);
+}
+
+.fecha {
+  margin: 30px;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(255, 219, 17);
+  border-radius: 4px;
+}
+
+.fecha:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(246, 255, 0);
+  transform: translateY(-10%);
+}
+
+.selec {
+  margin: 30px;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(255, 219, 17);
+  border-radius: 4px;
+}
+
+.selec:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(246, 255, 0);
+  transform: translateY(-10%);
 }

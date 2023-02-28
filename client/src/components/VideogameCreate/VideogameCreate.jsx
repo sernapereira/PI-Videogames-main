@@ -83,42 +83,48 @@ const VideogameCreate = () => {
   return (
     <div className={style.div}>
       <Link to={"/home"}>
-        <button>Volver</button>
+        <button className={style.boton} >Volver</button>
       </Link>
       <h1> Sube tu video juego </h1>
       <form onSubmit={(e) => handlerSubmit(e)}>
-        <div>
-          <label>Nombre: </label>
-          <input
-            type="text"
-            value={form.name}
-            name="name"
-            onChange={handlerChange}
-            placeholder="Nombre del Video Juego"
-            required
-            onBlur={handlerBlur}
-          />
-          {errors.name && <h5 style={styleError}>{errors.name}</h5>}
-        </div>
+        <ul className={style.lis}>
+          <li >
+            <h4>Nombre  </h4>
+            <input
+            className={style.input}
+              type="text"
+              value={form.name}
+              name="name"
+              onChange={handlerChange}
+              placeholder="Nombre del Video Juego"
+              required
+              onBlur={handlerBlur}
+            />
+            {errors.name && <h5 style={styleError}>{errors.name}</h5>}
+          </li>
 
-        <div>
-          <label>Image: </label>
+          <li>
+            <h4>Image</h4>
+            <input
+            className={style.input}
+              type="text"
+              value={form.background_image}
+              name="background_image"
+              onChange={handlerChange}
+              onBlur={handlerBlur}
+              placeholder="Url de tu imagen"
+              required
+            />
+            {errors.background_image && (
+              <h5 style={styleError}>{errors.background_image}</h5>
+            )}
+          </li>
+        </ul  >
+        <ul  className={style.liss}>
+        <li>
+          <h4>Fecha</h4>
           <input
-            type="text"
-            value={form.background_image}
-            name="background_image"
-            onChange={handlerChange}
-            onBlur={handlerBlur}
-            placeholder="Url de tu imagen"
-            required
-          />
-          {errors.background_image && (
-            <h5 style={styleError}>{errors.background_image}</h5>
-          )}
-        </div>
-        <div>
-          <label>Fecha :</label>
-          <input
+           className={style.input}
             type="date"
             value={form.Fecha}
             name="Fecha"
@@ -128,10 +134,12 @@ const VideogameCreate = () => {
             required
           />
           {errors.Fecha && <h5 style={styleError}>{errors.Fecha}</h5>}
-        </div>
-        <div>
-          <label>Rating: </label>
+        </li>
+        
+        <li>
+          <h4>Rating </h4>
           <input
+           className={style.input}
             type="text"
             value={form.rating}
             name="rating"
@@ -141,10 +149,13 @@ const VideogameCreate = () => {
             required
           />
           {errors.rating && <h5 style={styleError}>{errors.rating}</h5>}
-        </div>
-        <div>
-          <label>Genres: </label>
+        </li>
+        </ul>
+        <ul className={style.lisss} >
+        <li>
+          <h4>Genres</h4>
           <select
+          className={style.selec}
             onChange={(e) => handlerSelectGenres(e)}
             onBlur={handlerBlur}
             placeholder="Selecciona genero"
@@ -159,12 +170,13 @@ const VideogameCreate = () => {
             {errors.genres && <h5 style={styleError}>{errors.genres}</h5>}
           </select>
           <ul>
-            <li>{form.genres.map((el) => el + ", ")}</li>
+            <li className={style.lis} >{form.genres.map((el) => el + ", ")}</li>
           </ul>
-        </div>
-        <div>
-          <label>Platforms: </label>
+        </li>
+        <li>
+          <h4>Platforms</h4>
           <select
+          className={style.selec}
             onChange={(e) => handlerSelectPlstaforms(e)}
             onBlur={handlerBlur}
             placeholder="Plataforms"
@@ -179,13 +191,15 @@ const VideogameCreate = () => {
           </select>
 
           <ul>
-            <li>{form.platforms.map((el) => el + ", ")}</li>
+            <li className={style.lis}>{form.platforms.map((el) => el + ", ")}</li>
           </ul>
           {errors.plataforms && <h5 style={styleError}>{errors.plataforms}</h5>}
-        </div>
+        </li>
+        </ul>
         <div>
-          <label>Description: </label>
+          <h4>Description</h4>
           <textarea
+         
             name="description"
             cols="50"
             rows="5"
@@ -205,7 +219,7 @@ const VideogameCreate = () => {
           </button>
         </div>
       </form>
-      {loading && <Loading />}
+      
     </div>
   );
 };

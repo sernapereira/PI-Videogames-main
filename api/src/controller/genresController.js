@@ -11,5 +11,4 @@ const getAllGenres = async () => {
   });
 };
 
-
 module.exports = { getAllGenres };

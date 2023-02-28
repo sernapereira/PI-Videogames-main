@@ -15,6 +15,82 @@
     line-height: 1.5;
     color: rgb(255, 255, 255);
   }
+
+  .boton {
+    width: 130px;
+    padding: 9px;
+    border: none;
+    background-color: rgb(255, 219, 17);
+    border-radius: 4px;
+  }
   
+  .boton:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(246, 255, 0);
+    transform: translateY(-10%);
+  }
+  
+  
+  .div textarea {
+    font-family: inherit;
+    resize: none;
+    background-color: rgb(255, 219, 17);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  
+  .lis {
+    margin: 40px;
+    display: inline-flex;
+    width: 60%;
+    list-style-type: none;
+  }
+  
+  .liss {
+    margin: 30px;
+    display: inline-flex;
+    width: 90%;
+    list-style-type: none;
+  }
+  
+  .lisss {
+    margin: 30px;
+    display: inline-flex;
+    width: 40%;
+    list-style-type: none;
+  }
+  
+  .input {
+    color: black;
+    margin: 30px;
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(255, 219, 17);
+    border-radius: 4px;
+  }
+  
+
+  
+  .fecha {
+    color: black;
+    margin: 30px;
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(255, 219, 17);
+    border-radius: 4px;
+  }
+  
+
+  
+  .selec {
+    margin: 30px;
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(255, 219, 17);
+    border-radius: 4px;
+  }
 
   

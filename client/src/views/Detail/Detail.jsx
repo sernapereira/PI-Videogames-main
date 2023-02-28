@@ -19,12 +19,11 @@ const Detail = () => {
     dispatch
   );
   const juego = useSelector((state) => state.videogames);
-  console.log(juego[0].platforms);
 
   return (
     <div className={styleCon.contenedor}>
       <Link to={"/home"}>
-        <button>Volver</button>
+        <button className={style.boton} >Volver</button>
       </Link>
       <div className={style.detail}>
         {juego.length > 1 ? (
@@ -33,37 +32,48 @@ const Detail = () => {
           <div>
             <h2>{juego[0].name}</h2>
             <img src={juego[0].background_image} width="700px" height="450px" />
-
-            <div>
-              Plataformas del juego :
-              {juego[0].platforms[0].platform
-                ? juego[0].platforms.map((elem) => (
+            <h2>{juego[0].name}</h2>
+            <ul className={style.lis} >
+              <li  >
+                <h3>Plataformas</h3>
+                {juego[0].platforms[0].platform ? (
+                  juego[0].platforms.map((elem) => (
                     <h5 key={num++}>
-                      <li>{elem.platform.name}</li>
+                      <li className={style.input}>{elem.platform.name}</li>
                     </h5>
                   ))
-                :   <h4>{juego[0].platforms.join(" - ")}</h4>}
-            
-           
-           
-           
-            </div>
-            <h5>id : {juego[0].id}</h5>
-            <h3>rating : {juego[0].rating}</h3>
-            <h3>
-              Fecha de lanzamiento : {juego[0].released || juego[0].Fecha}
-            </h3>
-
-            <h3></h3>
-
-            <div>
-              Genres
-              {juego[0].genres.map((elem) => (
-                <h5 key={num++}>
-                  <li>{elem.name}</li>
+                ) : (
+                  <h4 className={style.input}>{juego[0].platforms.join(" - ")}</h4>
+                )}
+              </li >
+              <li >
+               <h3>Genres</h3> 
+                {juego[0].genres.map((elem) => (
+                  <h5 key={num++}>
+                    <li className={style.input}>{elem.name}</li>
+                  </h5>
+                ))}
+              </li>
+            </ul>
+            <ul  className={style.liss}>
+              <li >
+                {" "}
+                <h3>Id</h3>
+                <h5 className={style.fecha} > {juego[0].id}</h5>
+              </li>
+              <li >
+                <h3>Rating</h3>
+                <h4 className={style.fecha}>{juego[0].rating}</h4>
+              </li>
+              <li>
+                {" "}
+                <h3>Fecha de lanzamiento</h3>
+                <h5 className={style.fecha}>
+                  {juego[0].released || juego[0].Fecha}
                 </h5>
-              ))}
-            </div>
+              </li>
+            </ul>
+
             <div>
               <h4>Imagenes del juego</h4>
 

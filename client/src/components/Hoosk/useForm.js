@@ -27,7 +27,7 @@ export const useForm = (initialForm, validateForm) => {
     setErrors(validateForm(form));
 
     if (Object.keys(errors).length === 0) {
-      
+      alert("Juegos subido con exito")
       setLoading(true);
       dispatch(postVideogames(form));
 
