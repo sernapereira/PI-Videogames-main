@@ -1,6 +1,6 @@
 .div {
-  width: 18%;
-  margin: 40px;
+  margin: 30px auto 30px;
+  
   border-top-right-radius: 100px;
   border-bottom-left-radius: 100px;
   background-color: rgba(0, 0, 0, 0.729);
@@ -14,10 +14,11 @@
 
   align-items: center;
 
-  width: 85%;
+  width: 50%;
 }
 
 .boton {
+  margin: auto;
   width: 130px;
   padding: 9px;
   border: none;
@@ -33,6 +34,7 @@
 
 
 .div textarea {
+  margin: 0px 50px 50px;
   font-family: inherit;
   resize: none;
   background-color: rgb(255, 219, 17);
@@ -41,28 +43,29 @@
 }
 
 .lis {
-  margin: 30px;
+  margin: auto;
+  
   display: inline-flex;
-  width: 45%;
+ 
   list-style-type: none;
 }
 
 .liss {
-  margin: 30px;
+  margin: auto;
   display: inline-flex;
-  width: 45%;
+
   list-style-type: none;
 }
 
 .lisss {
-  margin: 30px;
+  margin: auto;
   display: inline-flex;
-  width: 40%;
+ 
   list-style-type: none;
 }
 
 .input {
-  margin: 30px;
+  margin: 0px 50px 50px;
   width: 150px;
   padding: 10px;
   border: none;
@@ -77,7 +80,7 @@
 }
 
 .fecha {
-  margin: 30px;
+  margin: 0px 50px 50px;
   width: 150px;
   padding: 10px;
   border: none;
@@ -92,7 +95,7 @@
 }
 
 .selec {
-  margin: 30px;
+  margin: 0px 50px 50px;
   width: 150px;
   padding: 10px;
   border: none;

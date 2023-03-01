@@ -70,8 +70,7 @@ const VideogameCreate = () => {
   const {
     form,
     errors,
-    loading,
-    response,
+
     handlerChange,
     handlerBlur,
     handlerSubmit,
@@ -166,9 +165,8 @@ const VideogameCreate = () => {
                     {elem.elem}
                   </option>
                 ))}
-              {errors.genres && <h5 style={styleError}>{errors.genres}</h5>}{" "}
-              {console.log(form.genres.length)}
             </select>
+            {errors.genres && <h5 style={styleError}>{errors.genres}</h5>}
             <ul>
               <li className={style.lis}>
                 {form.genres.map((el) => el + ", ")}
@@ -191,15 +189,13 @@ const VideogameCreate = () => {
                   </option>
                 ))}
             </select>
+            {errors.platforms && <h5 style={styleError}>{errors.platforms}</h5>}
 
             <ul>
               <li className={style.lis}>
                 {form.platforms.map((el) => el + ", ")}
               </li>
             </ul>
-            {errors.plataforms && (
-              <h5 style={styleError}>{errors.plataforms}</h5>
-            )}
           </li>
         </ul>
         <div>
@@ -218,7 +214,20 @@ const VideogameCreate = () => {
           )}
         </div>
         <div>
-          <button type="submit" value="Enviar">
+          {console.log(form)}
+          <button
+            type="submit"
+            value="Enviar"
+            disabled={
+              form.name === "" ||
+              form.Fecha === "" ||
+              form.background_image === "" ||
+              form.description === "" ||
+              form.genres.length === 0 ||
+              form.platforms.length === 0 ||
+              form.rating === ""
+            }
+          >
             Subir
           </button>
         </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getGenres, postVideogames } from "../../redux/actions";
+import { useDispatch} from "react-redux";
+import { postVideogames } from "../../redux/actions";
 
 export const useForm = (initialForm, validateForm) => {
   const [form, setForm] = useState(initialForm);

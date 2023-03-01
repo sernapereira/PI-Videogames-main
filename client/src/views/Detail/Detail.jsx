@@ -4,26 +4,22 @@ import { Link, useParams } from "react-router-dom";
 import Loading from "../../components/Loading/loading";
 import { detallVideogame } from "../../redux/actions";
 import style from "./Detail.module.css";
-import styleCon from "../../components/CardsContainer/CardsContainer";
+
 
 let num = 0;
 const Detail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
 
-  useEffect(
-    () => {
-      dispatch(detallVideogame(id));
-    },
-    [id],
-    dispatch
-  );
+  useEffect(() => {
+    dispatch(detallVideogame(id));
+  }, [id, dispatch]);
   const juego = useSelector((state) => state.videogames);
 
   return (
-    <div className={styleCon.contenedor}>
+    <div className={style.contenedor}>
       <Link to={"/home"}>
-        <button className={style.boton} >Volver</button>
+        <button className={style.boton}>Volver</button>
       </Link>
       <div className={style.detail}>
         {juego.length > 1 ? (
@@ -31,10 +27,15 @@ const Detail = () => {
         ) : (
           <div>
             <h2>{juego[0].name}</h2>
-            <img src={juego[0].background_image} width="700px" height="450px" />
+            <img
+              src={juego[0].background_image}
+              width="700px"
+              height="450px"
+              alt="img no fount"
+            />
             <h2>{juego[0].name}</h2>
-            <ul className={style.lis} >
-              <li  >
+            <ul className={style.lis}>
+              <li>
                 <h3>Plataformas</h3>
                 {juego[0].platforms[0].platform ? (
                   juego[0].platforms.map((elem) => (
@@ -43,11 +44,13 @@ const Detail = () => {
                     </h5>
                   ))
                 ) : (
-                  <h4 className={style.input}>{juego[0].platforms.join(" - ")}</h4>
+                  <h4 className={style.input}>
+                    {juego[0].platforms.join(" - ")}
+                  </h4>
                 )}
-              </li >
-              <li >
-               <h3>Genres</h3> 
+              </li>
+              <li>
+                <h3>Genres</h3>
                 {juego[0].genres.map((elem) => (
                   <h5 key={num++}>
                     <li className={style.input}>{elem.name}</li>
@@ -55,13 +58,13 @@ const Detail = () => {
                 ))}
               </li>
             </ul>
-            <ul  className={style.liss}>
-              <li >
+            <ul className={style.liss}>
+              <li>
                 {" "}
                 <h3>Id</h3>
-                <h5 className={style.fecha} > {juego[0].id}</h5>
+                <h5 className={style.fecha}> {juego[0].id}</h5>
               </li>
-              <li >
+              <li>
                 <h3>Rating</h3>
                 <h4 className={style.fecha}>{juego[0].rating}</h4>
               </li>
@@ -84,6 +87,7 @@ const Detail = () => {
                     width="500px"
                     height="350px"
                     key={num++}
+                    alt="img no fount"
                   />
                 ))}
             </div>

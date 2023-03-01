@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../Card/Card";
-import Loading from "../Loading/loading";
 import NotName from "../NotName/NotName";
 import style from "./CardsContainer.module.css";
 
 const CardsContainer = ({ current }) => {
   let aux =
     current.filter((e) => e.name === "0000").length === 1 ? true : false;
-
-
 
   return (
     <div className={style.contenedor}>
@@ -27,8 +24,6 @@ const CardsContainer = ({ current }) => {
           );
         })
       )}
-
-      
     </div>
   );
 };
