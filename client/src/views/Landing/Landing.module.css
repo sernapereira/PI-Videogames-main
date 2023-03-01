@@ -19,3 +19,14 @@ body {
     background-color: rgb(255, 219, 17);
     border-radius: 4px;
 }
+
+.masrcas{
+  display:inline;
+  
+}
+
+.img{
+  margin: 100px;
+  width:100px;
+  height:80px;
+}

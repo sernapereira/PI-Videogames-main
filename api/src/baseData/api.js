@@ -20,17 +20,23 @@ const getApiVideogame = async () => {
   return arry || { name: "Problemas en la API !!!" };
 };
 
-const ApiGenres = async () => {
-  const dataRenges = await axios
-    .get(
-      `https://api.rawg.io/api/genres?key=${API_KEY}&dates=2019-09-01,2019-09-30&platforms=18,1,7`
-    )
-    .then((res) => {
-      return res.data;
-    });
+const ApiGenres = () => {
+  return fetch(
+    `https://api.rawg.io/api/genres?key=${API_KEY}&dates=2019-09-01,2019-09-30&platforms=18,1,7`
+  )
+    .then((res) => res.json())
+    .then((res) => res.results)
+    .catch((error) =>  "error ------>>>" +  error.message + console.log(error));
 
-  return dataRenges.results;
-  
+  // const dataRenges = await axios
+  //   .get(
+  //     `https://api.rawg.io/api/genres?key=${API_KEY}&dates=2019-09-01,2019-09-30&platforms=18,1,7`
+  //   )
+  //   .then((res) => {
+  //     return res.data;
+  //   });
+
+  // return dataRenges.results;
 };
 
 module.exports = { getApiVideogame, ApiGenres };

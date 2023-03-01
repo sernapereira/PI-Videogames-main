@@ -19,7 +19,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   //logica paginado
-  const [currentPage, setCurrentPage] = useState(1); //se un estado local, con la pagina actual "currentPage" y con un estado la setee "setCurrentPage"
+  const [currentPage, setCurrentPage] = useState(1); //en un estado local, con la pagina actual "currentPage" y con un estado la setee "setCurrentPage"
   const [juegosPerPage] = useState(15); // en este estado local colocamos un esatdo que nos diga cuantos juegos tenemos por pagina y va a setear los personajes por pagnas
   const indixeUltimoJuego = currentPage * juegosPerPage; // en esta operacion tenemos  el index del ultimo personaje por pagina // 15
   const indixePrimerJuego = indixeUltimoJuego - juegosPerPage; // el index del primer personaje por pagina // 0
@@ -69,9 +69,11 @@ const Home = () => {
               <button className={style.atras}>Atras</button>
             </Link>{" "}
           </li>
+
           <li>
-          <h1>Api VideoJuegos</h1>
+            <h1>Api VideoJuegos</h1>
           </li>
+
           <li>
             {" "}
             <button
@@ -99,6 +101,7 @@ const Home = () => {
               <option value="Desc">Decendente</option>
             </select>
           </li>
+
           <li>
             {" "}
             <select
@@ -128,6 +131,7 @@ const Home = () => {
               <option value="Card">Card</option>
             </select>
           </li>
+
           <li>
             {
               <select
@@ -140,23 +144,30 @@ const Home = () => {
               </select>
             }
           </li>
+
           <li className={style.buscar}>
             {" "}
             <SearchBar />
           </li>
         </ul>
       </nav>
+      <Paginado
+        juegosPerPage={juegosPerPage}
+        allVideogames={allVideogames.length}
+        paginado={paginado}
+      />
+
+      {currentJuegos.length === 0 ? (
+        <Loading />
+      ) : (
+        <CardsContainer current={currentJuegos} />
+      )}
 
       <Paginado
         juegosPerPage={juegosPerPage}
         allVideogames={allVideogames.length}
         paginado={paginado}
       />
-      {currentJuegos.length === 0 ? (
-        <Loading />
-      ) : (
-        <CardsContainer current={currentJuegos} />
-      )}
     </div>
   );
 };

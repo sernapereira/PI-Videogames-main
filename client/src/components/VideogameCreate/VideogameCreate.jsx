@@ -216,6 +216,7 @@ const VideogameCreate = () => {
         <div>
           {console.log(form)}
           <button
+          className={style.botonSubmit}
             type="submit"
             value="Enviar"
             disabled={
@@ -228,7 +229,7 @@ const VideogameCreate = () => {
               form.rating === ""
             }
           >
-            Subir
+            ENVIAR
           </button>
         </div>
       </form>

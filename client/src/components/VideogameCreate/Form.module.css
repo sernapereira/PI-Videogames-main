@@ -17,6 +17,17 @@
   width: 50%;
 }
 
+.botonSubmit{
+  margin: auto;
+  width: 130px;
+  padding: 9px;
+  border: none;
+  background-color: rgb(255, 219, 17);
+  border-radius: 4px;
+}
+
+
+
 .boton {
   margin: auto;
   width: 130px;

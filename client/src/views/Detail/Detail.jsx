@@ -5,7 +5,6 @@ import Loading from "../../components/Loading/loading";
 import { detallVideogame } from "../../redux/actions";
 import style from "./Detail.module.css";
 
-
 let num = 0;
 const Detail = () => {
   const dispatch = useDispatch();
@@ -28,6 +27,7 @@ const Detail = () => {
           <div>
             <h2>{juego[0].name}</h2>
             <img
+            className={style.img}
               src={juego[0].background_image}
               width="700px"
               height="450px"
@@ -83,14 +83,18 @@ const Detail = () => {
               {juego[0].short_screenshots &&
                 juego[0].short_screenshots.map((elem) => (
                   <img
+                  className={style.imgmas}
                     src={elem.image}
-                    width="500px"
-                    height="350px"
+                    width="810px"
+                    height="550px"
                     key={num++}
                     alt="img no fount"
                   />
                 ))}
             </div>
+            <Link to={"/home"}>
+              <button className={style.boton}>Volver</button>
+            </Link>
           </div>
         )}
       </div>

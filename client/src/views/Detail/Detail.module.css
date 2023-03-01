@@ -15,7 +15,21 @@
   color: rgb(255, 255, 255);
 }
 
+.imgmas{
+  padding-top: 50px;
+  border-bottom-left-radius: 10px;
+ 
+}
+
+
+.img {
+  border-bottom-left-radius: 50px;
+  width: "700px";
+  height: "450px";
+}
+
 .boton {
+  margin-top: 40px;
   width: 130px;
   padding: 9px;
   border: none;
