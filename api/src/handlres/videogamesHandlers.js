@@ -3,6 +3,7 @@ const {
   createVideogames,
   getVideoGameById,
   getVideogameByName,
+  update,
 } = require("../controller/videogamesController");
 
 const getVideogamesHandler = async (req, res) => {
@@ -57,8 +58,19 @@ const createVideogamesHandler = async (req, res) => {
   }
 };
 
+const actualizarVideojuego = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const body = req.body;
+    const videojuego = await update(id, body);
+    res.status(200).json(videojuego);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 module.exports = {
   getVideogameHandler,
   getVideogamesHandler,
   createVideogamesHandler,
+  actualizarVideojuego
 };

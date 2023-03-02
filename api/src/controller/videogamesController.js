@@ -1,6 +1,7 @@
 const { getApiVideogame } = require("../baseData/api");
 const { generalDataVideogames } = require("../baseData/relacionApiDbb");
 const { Videogame, Genres } = require("../db");
+const { getVideogamesBdd } = require("../baseData/bdd");
 
 const getAllVideogames = async () => {
   const todosVideogames = await generalDataVideogames();
@@ -34,8 +35,7 @@ const getVideogameByName = async (name, res) => {
   const data = await generalDataVideogames();
   let gameName = data.filter((elem) => elem.name.toLowerCase().includes(name));
 
-    return gameName;
-  
+  return gameName;
 };
 
 const createVideogames = async (
@@ -69,9 +69,29 @@ const createVideogames = async (
   } catch (error) {}
 };
 
+const update = async (id, data) => {
+  const index = await generalDataVideogames();
+
+  const indexx = index.findIndex((elem) => elem.id === id);
+
+  if (index === -1) {
+    throw Error({ message: "Juego no encontrado" });
+  } else {
+    const juego = index[indexx];
+    console.log(index[indexx]);
+
+    generalDataVideogames[indexx] = {
+      ...juego,
+      ...data,
+    };
+    return generalDataVideogames[indexx];
+  }
+};
+
 module.exports = {
   getAllVideogames,
   createVideogames,
   getVideoGameById,
   getVideogameByName,
+  update,
 };

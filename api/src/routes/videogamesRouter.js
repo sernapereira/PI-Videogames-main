@@ -3,6 +3,7 @@ const {
   getVideogamesHandler,
   getVideogameHandler,
   createVideogamesHandler,
+  actualizarVideojuego,
 } = require("../handlres/videogamesHandlers");
 
 const videogamesRouter = Router();
@@ -13,5 +14,7 @@ videogamesRouter.get("/", getVideogamesHandler);
 videogamesRouter.get("/:id", getVideogameHandler);
 //RUTA PARA CREAR JUEGO
 videogamesRouter.post("/", createVideogamesHandler);
+
+videogamesRouter.patch("/:id", actualizarVideojuego)
 
 module.exports = videogamesRouter;

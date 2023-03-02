@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const GET_VIDEOGAMES = "GET_VIDEOGAMES";
-const errors = [{name: "0000"}]
+const errors = [{ name: "0000" }];
 
 export const getVideogames = () => {
   return async function (dispatch) {
@@ -43,15 +43,14 @@ export const filterByAlfabetico = (payload) => {
 export const GET_NAME_JUEGOS = "GET_NAME_JUEGOS";
 export const getNameVidejuegos = (name) => {
   return async (dispatch) => {
-    
     try {
       const json = await axios.get(
         `http://localhost:3001/videogame?name=${name}`
       );
-        
+
       return dispatch({
         type: GET_NAME_JUEGOS,
-        payload: json.data.length === 0 ? errors : json.data
+        payload: json.data.length === 0 ? errors : json.data,
       });
     } catch (error) {
       console.log(error.message);
@@ -85,18 +84,17 @@ export const postVideogames = (payload) => {
   };
 };
 
-export const DETALLE_VIDEOGAME = "DETALLE_VIDEOGAME"
+export const DETALLE_VIDEOGAME = "DETALLE_VIDEOGAME";
 export const detallVideogame = (id) => {
   return async function (dispatch) {
     try {
       const json = await axios.get(`http://localhost:3001/videogame/${id}`);
-      
-     
+
       return dispatch({
         type: DETALLE_VIDEOGAME,
-        payload: json.data
+        payload: json.data,
       });
-    } catch (error) { 
+    } catch (error) {
       console.log(error);
     }
   };
